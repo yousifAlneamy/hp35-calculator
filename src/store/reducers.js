@@ -177,7 +177,18 @@ export const stackShift = (state = false, action) => {
 
 const memory = (state = "0", action) => (action.type === C.STO ? action.payload : state);
 
-const arc = (state = false, action) => (action.type === C.ARC ? action.payload : false);
+const arc = (state = false, action) => {
+	switch (action.type) {
+		case C.ARC:
+			return action.payload;
+
+		case C.ENABLE_ARC:
+			return true;
+
+		default:
+			return false;
+	}
+};
 
 const refreshEntry = (state = false, action) => {
 	switch (action.type) {

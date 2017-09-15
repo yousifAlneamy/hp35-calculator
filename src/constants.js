@@ -20,7 +20,8 @@ const actions = {
 	ARC: "ARC",
 	SHIFT_UP: "SHIFT_UP",
 	ADD_EEX: "ADD_EEX",
-	EXE_A_TRI_FUNCTION: "EXE_A_TRI_FUNCTION"
+	EXE_A_TRI_FUNCTION: "EXE_A_TRI_FUNCTION",
+	ENABLE_ARC: "ENABLE_ARC"
 };
 
 export default actions;

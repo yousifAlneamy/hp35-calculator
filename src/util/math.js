@@ -11,6 +11,12 @@ export const triFunctions = {
 	tan: { normal: Math.tan, arc: Math.atan }
 };
 
+export const arcTriFunctions = {
+	asin: Math.asin,
+	acos: Math.acos,
+	atan: Math.atan
+};
+
 export const binaryFunctions = {
 	add(a, b) {
 		return a + b;

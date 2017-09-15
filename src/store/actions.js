@@ -1,6 +1,6 @@
 import C from "../constants";
 import * as KC from "../keyCodes";
-import { nonTriFunctions, triFunctions, binaryFunctions } from "../util/math";
+import { nonTriFunctions, triFunctions, binaryFunctions, arcTriFunctions } from "../util/math";
 
 export const keyCode = key => {
 	switch (key) {
@@ -27,6 +27,11 @@ export const keyCode = key => {
 		case KC.LN:
 		case KC.EXP:
 			return exeNonTriFunction(key);
+
+		case KC.ASIN:
+		case KC.ACOS:
+		case KC.ATAN:
+			return exeArcTriFunction(key);
 
 		case KC.SIN:
 		case KC.COS:
@@ -133,6 +138,11 @@ export const exeTriFunction = funcName => (dispatch, getState) => {
 
 	dispatch({ type, payload });
 };
+
+export const exeArcTriFunction = funcName => ({
+	type: C.EXE_A_TRI_FUNCTION,
+	payload: arcTriFunctions[funcName]
+});
 export const xPowerY = () => ({ type: C.X_POW_Y });
 
 export const recall = () => (dispatch, getState) => {
@@ -165,5 +175,7 @@ export const toggleARC = () => (dispatch, getState) => {
 		payload: !arc
 	});
 };
+
+export const enableARC = () => (dispatch, getState) => dispatch({ type: C.ENABLE_ARC });
 
 export const addEEX = () => ({ type: C.ADD_EEX });
