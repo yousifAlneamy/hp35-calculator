@@ -1,6 +1,6 @@
 import App from "../ui/App";
 import { connect } from "react-redux";
-import { keyCode } from "../../store/actions";
+import keyCodeMap from "../../store/actions";
 
 const mapStateToProps = state => {
 	return {
@@ -11,7 +11,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		keyCodes(keycode) {
-			dispatch(keyCode(keycode));
+			dispatch(keyCodeMap[keycode](keycode));
 		}
 	};
 };

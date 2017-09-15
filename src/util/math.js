@@ -1,23 +1,23 @@
-export const nonTriFunctions = {
+const nonTriFunctions = {
 	sqrt: Math.sqrt,
 	log: Math.log10,
 	ln: Math.log,
 	exp: Math.exp
 };
 
-export const triFunctions = {
+const triFunctions = {
 	sin: { normal: Math.sin, arc: Math.asin },
 	cos: { normal: Math.cos, arc: Math.acos },
 	tan: { normal: Math.tan, arc: Math.atan }
 };
 
-export const arcTriFunctions = {
+const arcTriFunctions = {
 	asin: Math.asin,
 	acos: Math.acos,
 	atan: Math.atan
 };
 
-export const binaryFunctions = {
+const binaryFunctions = {
 	add(a, b) {
 		return a + b;
 	},
@@ -30,4 +30,11 @@ export const binaryFunctions = {
 	div(a, b) {
 		return a / b;
 	}
+};
+
+export default {
+	...nonTriFunctions,
+	...triFunctions,
+	...arcTriFunctions,
+	...binaryFunctions
 };
