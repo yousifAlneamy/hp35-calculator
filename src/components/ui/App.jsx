@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Panel from "../containers/Panel";
 import * as KC from "../../keyCodes";
 import "../../App.css";
 
@@ -13,11 +12,16 @@ class App extends Component {
 	}
 
 	render() {
-		const props = this.props;
+		const [x, y, z, t] = this.props.stack;
 		return (
 			<div className="App">
 				<form name="calculator">
-					<Panel />
+					<div className="panel">
+						<div>t: {t}</div>
+						<div>z: {z}</div>
+						<div>y: {y}</div>
+						<div>x: {x}</div>
+					</div>
 					<div className="parent">
 						<input className="childInput" type="button" value="xʸ" onClick={() => this.onKeyIn(KC.POW)} />
 						<input className="childInput" type="button" value="LOG" onClick={() => this.onKeyIn(KC.LOG)} />
