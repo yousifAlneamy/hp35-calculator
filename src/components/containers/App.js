@@ -4,7 +4,7 @@ import { keyCode } from "../../store/actions";
 
 const mapStateToProps = state => {
 	return {
-		stack: state.stack
+		...state
 	};
 };
 

@@ -7,7 +7,7 @@ import C from "./constants";
 
 import storeFactory from "./store";
 import { keyCode } from "./store/actions";
-import KC from "./keyCodes";
+
 import registerServiceWorker from "./registerServiceWorker";
 const store = storeFactory();
 

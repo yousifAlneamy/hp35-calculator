@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Panel from "../containers/Panel";
-import KC from "../../keyCodes";
+import * as KC from "../../keyCodes";
 import "../../App.css";
 
 class App extends Component {

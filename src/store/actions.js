@@ -1,6 +1,6 @@
 import C from "../constants";
+import * as KC from "../keyCodes";
 import { nonTriFunctions, triFunctions, binaryFunctions } from "../util/math";
-import KC from "../keyCodes";
 
 export const keyCode = key => {
 	switch (key) {
@@ -121,17 +121,17 @@ export const exeNonTriFunction = funcName => ({
 });
 export const exeTriFunction = funcName => (dispatch, getState) => {
 	const { arc } = getState();
-	let func;
+	let payload;
+	let type;
 	if (arc) {
-		func = triFunctions[funcName]["arc"];
+		type = C.EXE_A_TRI_FUNCTION;
+		payload = triFunctions[funcName]["arc"];
 	} else {
-		func = triFunctions[funcName]["normal"];
+		type = C.EXE_TRI_FUNCTION;
+		payload = triFunctions[funcName]["normal"];
 	}
 
-	dispatch({
-		type: C.EXE_TRI_FUNCTION,
-		payload: func
-	});
+	dispatch({ type, payload });
 };
 export const xPowerY = () => ({ type: C.X_POW_Y });
 

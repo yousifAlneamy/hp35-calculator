@@ -1,6 +1,9 @@
 import C from "../constants";
 import { combineReducers } from "redux";
 
+const degreesToRadians = degrees => degrees * Math.PI / 180.0;
+const radiansToDegrees = radians => radians * 180.0 / Math.PI;
+
 export const stack = (state = ["0", "0", "0", "0"], action) => {
 	let [x, y, z, t] = state;
 	let { payload, type } = action;
@@ -31,8 +34,7 @@ export const stack = (state = ["0", "0", "0", "0"], action) => {
 					}
 				}
 
-				const EEXIndex = x.indexOf("e");
-				if (x.includes(".", x.indexOf("e")) || x.length - EEXIndex <= 3) {
+				if (x.length - x.indexOf("e") <= 3) {
 					newX = x + payload;
 					return [newX, y, z, t];
 				} else {
@@ -81,8 +83,11 @@ export const stack = (state = ["0", "0", "0", "0"], action) => {
 		case C.EXE_NON_TRI_FUNCTION: // ln - log - e^x sqrt
 			return [payload(Number(x)).toString(), y, z, t];
 
-		case C.EXE_TRI_FUNCTION: // sin - cos - tan - arc
-			return [payload(Number(x)).toString(), y, z, z];
+		case C.EXE_TRI_FUNCTION: // sin - cos - tan
+			return [payload(degreesToRadians(Number(x))).toString(), y, z, z];
+
+		case C.EXE_A_TRI_FUNCTION: // asin - cos - atan
+			return [radiansToDegrees(payload(Number(x))).toString(), y, z, z];
 
 		case C.MUL_INVERSE_X:
 			return [(1 / Number(x)).toString(), y, z, t];
@@ -112,13 +117,11 @@ export const stack = (state = ["0", "0", "0", "0"], action) => {
 		}
 
 		case C.ADD_DOT: {
-			const EEXIndex = x.indexOf("e");
-			let startIndex = 0;
-			if (EEXIndex !== -1) {
-				startIndex = EEXIndex;
+			if (x.includes("e")) {
+				return state;
 			}
 
-			if (x.includes(".", startIndex)) {
+			if (x.includes(".")) {
 				return state;
 			}
 			const newX = x + ".";
@@ -150,6 +153,7 @@ export const stackShift = (state = false, action) => {
 		case C.SET_X:
 		case C.EXE_NON_TRI_FUNCTION:
 		case C.EXE_TRI_FUNCTION:
+		case C.EXE_A_TRI_FUNCTION:
 		case C.X_POW_Y:
 		case C.REC:
 		case C.STO:
