@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./components/containers/App";
+import App from "./components/ui/App";
 import { Provider } from "react-redux";
 import C from "./constants";
 
@@ -10,6 +10,7 @@ import { keyCode } from "./store/actions";
 
 import registerServiceWorker from "./registerServiceWorker";
 const store = storeFactory();
+console.log(store);
 
 //store.subscribe(() => console.log(store.getState()));
 window.store = store;

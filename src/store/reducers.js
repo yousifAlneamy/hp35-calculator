@@ -54,7 +54,7 @@ export const stack = (state = ["0", "0", "0", "0"], action) => {
 			return [y, x, z, t];
 
 		case C.SET_X:
-			return [payload, y, z, t];
+			return [payload, x, y, z];
 
 		case C.ADD_PI:
 			return [Math.PI.toString(), x, y, z];

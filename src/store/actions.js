@@ -113,42 +113,44 @@ const enableARC = () => (dispatch, getState) => dispatch({ type: C.ENABLE_ARC })
 
 const addEEX = () => ({ type: C.ADD_EEX });
 
+export const setX = number => ({ type: C.SET_X, payload: number });
+
 const addDigitMap = {
-	[KC.D0]: () => addDigit("0"),
-	[KC.D1]: () => addDigit("1"),
-	[KC.D2]: () => addDigit("2"),
-	[KC.D3]: () => addDigit("3"),
-	[KC.D4]: () => addDigit("4"),
-	[KC.D5]: () => addDigit("5"),
-	[KC.D6]: () => addDigit("6"),
-	[KC.D7]: () => addDigit("7"),
-	[KC.D8]: () => addDigit("8"),
-	[KC.D9]: () => addDigit("9")
+	[KC.D0]: addDigit("0"),
+	[KC.D1]: addDigit("1"),
+	[KC.D2]: addDigit("2"),
+	[KC.D3]: addDigit("3"),
+	[KC.D4]: addDigit("4"),
+	[KC.D5]: addDigit("5"),
+	[KC.D6]: addDigit("6"),
+	[KC.D7]: addDigit("7"),
+	[KC.D8]: addDigit("8"),
+	[KC.D9]: addDigit("9")
 };
 
 const exeArithmeticOperatorMap = {
-	[KC.ADD]: () => exeArithmeticOperator(KC.ADD),
-	[KC.SUB]: () => exeArithmeticOperator(KC.SUB),
-	[KC.MUL]: () => exeArithmeticOperator(KC.MUL),
-	[KC.DIV]: () => exeArithmeticOperator(KC.DIV)
+	[KC.ADD]: exeArithmeticOperator(KC.ADD),
+	[KC.SUB]: exeArithmeticOperator(KC.SUB),
+	[KC.MUL]: exeArithmeticOperator(KC.MUL),
+	[KC.DIV]: exeArithmeticOperator(KC.DIV)
 };
 const exeNonTriFunctionMap = {
-	[KC.SQRT]: () => exeNonTriFunction(KC.SQRT),
-	[KC.LOG]: () => exeNonTriFunction(KC.LOG),
-	[KC.LN]: () => exeNonTriFunction(KC.LN),
-	[KC.EXP]: () => exeNonTriFunction(KC.EXP)
+	[KC.SQRT]: exeNonTriFunction(KC.SQRT),
+	[KC.LOG]: exeNonTriFunction(KC.LOG),
+	[KC.LN]: exeNonTriFunction(KC.LN),
+	[KC.EXP]: exeNonTriFunction(KC.EXP)
 };
 
 const exeArcTriFunctionMap = {
-	[KC.ASIN]: () => exeArcTriFunction(KC.ASIN),
-	[KC.ACOS]: () => exeArcTriFunction(KC.ACOS),
-	[KC.ATAN]: () => exeArcTriFunction(KC.ATAN)
+	[KC.ASIN]: exeArcTriFunction(KC.ASIN),
+	[KC.ACOS]: exeArcTriFunction(KC.ACOS),
+	[KC.ATAN]: exeArcTriFunction(KC.ATAN)
 };
 
 const exeTriFunctionMap = {
-	[KC.SIN]: () => exeTriFunction(KC.SIN),
-	[KC.COS]: () => exeTriFunction(KC.COS),
-	[KC.TAN]: () => exeTriFunction(KC.TAN)
+	[KC.SIN]: exeTriFunction(KC.SIN),
+	[KC.COS]: exeTriFunction(KC.COS),
+	[KC.TAN]: exeTriFunction(KC.TAN)
 };
 
 export default {
@@ -157,20 +159,20 @@ export default {
 	...exeNonTriFunctionMap,
 	...exeArcTriFunctionMap,
 	...exeTriFunctionMap,
-	[KC.ARC]: () => toggleARC(),
-	[KC.CLR]: () => clearStack(),
-	[KC.CLX]: () => clearX(),
-	[KC.RCL]: () => recall(),
-	[KC.ROLL_DOWN]: () => roleStackDown(),
-	[KC.ENTER]: () => addEnter(),
-	[KC.DOT]: () => addDot(),
-	[KC.SWAP]: () => exchangeXWithY(),
-	[KC.POW]: () => xPowerY(),
-	[KC.STO]: () => storeToMemory(),
-	[KC.RECIPROCAL]: () => mulInverseX(),
-	[KC.PI]: () => addPI(),
-	[KC.CHS]: () => changeSign(),
-	[KC.EEX]: () => addEEX()
+	[KC.ARC]: toggleARC(),
+	[KC.CLR]: clearStack(),
+	[KC.CLX]: clearX(),
+	[KC.RCL]: recall(),
+	[KC.ROLL_DOWN]: roleStackDown(),
+	[KC.ENTER]: addEnter(),
+	[KC.DOT]: addDot(),
+	[KC.SWAP]: exchangeXWithY(),
+	[KC.POW]: xPowerY(),
+	[KC.STO]: storeToMemory(),
+	[KC.RECIPROCAL]: mulInverseX(),
+	[KC.PI]: addPI(),
+	[KC.CHS]: changeSign(),
+	[KC.EEX]: addEEX()
 };
 
 //const keyCode = key => {
