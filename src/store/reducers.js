@@ -63,7 +63,7 @@ export const stack = (state = ["0", "0", "0", "0"], action) => {
 			return [y, z, t, x];
 
 		case C.X_POW_Y:
-			return [Math.pow(Number(x), Number(y)).toString(), z, t, t];
+			return [Math.pow(Number(y), Number(x)).toString(), z, t, t];
 
 		case C.SHIFT_DOWN:
 			return [x, y, z, z];
