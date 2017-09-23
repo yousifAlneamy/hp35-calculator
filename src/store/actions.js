@@ -109,7 +109,7 @@ const toggleARC = () => (dispatch, getState) => {
 	});
 };
 
-const enableARC = () => (dispatch, getState) => dispatch({ type: C.ENABLE_ARC });
+// const enableARC = () => (dispatch, getState) => dispatch({ type: C.ENABLE_ARC });
 
 const addEEX = () => ({ type: C.ADD_EEX });
 

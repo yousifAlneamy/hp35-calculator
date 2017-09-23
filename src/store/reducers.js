@@ -132,7 +132,6 @@ export const stackShift = (state = false, action) => {
 		case C.STO:
 		case C.MUL_INVERSE_X:
 		case C.ADD_PI:
-		case C.ROLE_DOWN:
 			return true;
 
 		case C.ADD_DOT:

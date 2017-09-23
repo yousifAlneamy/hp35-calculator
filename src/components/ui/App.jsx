@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import * as KC from "../../keyCodes";
+//import * as KC from "../../keyCodes";
 import "../../App.css";
 import Calculator from "../containers/Calculator";
 import Program from "../containers/Program";
