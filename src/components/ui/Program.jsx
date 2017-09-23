@@ -5,9 +5,14 @@ class Program extends Component {
 	constructor(props) {
 		super(props);
 		this.runProgram = this.runProgram.bind(this);
+		this.state = { input: "" };
+		this.handleChange = this.handleChange.bind(this);
+	}
+	handleChange(event) {
+		this.setState({ input: event.target.value });
 	}
 	runProgram() {
-		const inputLines = this.refs.iptProgram.value
+		const inputLines = this.state.input
 			.trim()
 			.split("\n")
 			.map(line => line.trim().toLowerCase())
@@ -15,7 +20,7 @@ class Program extends Component {
 
 		console.log(inputLines);
 		if (this.isCompilable(inputLines)) {
-			for (let line of inputLines) {
+			for (const line of inputLines) {
 				if (this.isNumber(line)) {
 					this.addNumber(line);
 				} else {
@@ -27,7 +32,7 @@ class Program extends Component {
 		}
 	}
 	isCompilable(inputLines) {
-		for (let line of inputLines) {
+		for (const line of inputLines) {
 			if (!this.isKeyCode(line.toUpperCase()) && !this.isNumber(line)) {
 				return false;
 			}
@@ -49,7 +54,7 @@ class Program extends Component {
 	render() {
 		return (
 			<div className="program">
-				<textarea rows="4" cols="50" ref="iptProgram" placeholder="Write program here" />
+				<textarea rows="4" cols="50" onChange={this.handleChange} placeholder="Write program here" />
 				<button onClick={this.runProgram} type="button">
 					Run Program
 				</button>

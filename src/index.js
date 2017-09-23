@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/ui/App";
 import { Provider } from "react-redux";
-import C from "./constants";
+// import C from "./constants";
 
 import storeFactory from "./store";
-import { keyCode } from "./store/actions";
+// import { keyCode } from "./store/actions";
 
 import registerServiceWorker from "./registerServiceWorker";
 const store = storeFactory();
