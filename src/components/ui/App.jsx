@@ -7,7 +7,7 @@ import Program from "../containers/Program";
 class App extends Component {
 	render() {
 		return (
-			<div className="App">
+			<div id="main">
 				<Calculator />
 				<Program />
 			</div>

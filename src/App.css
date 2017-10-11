@@ -1,64 +1,164 @@
-* {
-	box-sizing: border-box;
+body {
+	padding-top: 20px;
 }
-.App {
-	position: relative;
-	width: 600px;
-	border: 3px solid #002b3f;
-	border-radius: 12px;
-	margin: 0px auto;
-	padding: 20px 20px 100px 20px;
-	background-color: lightgray;
+.calculator {
+	box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
+	border-radius: 10px;
+	width: 320px;
+	background-color: #333333;
+	padding: 10px;
 }
-#filterDiv #resultDiv {
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	font-size: 25px;
-}
-#clearPtn {
-	color: darkred;
-}
-#calcPannel {
-	background-color: #eedbdb;
-	width: 100%;
-	padding: 15px;
-	margin-bottom: 20px;
-	font-size: 25px;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-#agh {
-	position: relative;
-	float: right;
-	margin-top: 15px;
-}
-#agh p {
+
+.panel {
+	text-shadow: 1px 1px 2px red, 0 0 25px red, 0 0 5px red;
+
+	display: block;
+	font-family: "Lucida Console", Monaco, monospace;
+	text-align: left;
+	border: 0;
+	background: black;
+	color: #e81010;
+	padding: 10px;
 	font-size: 20px;
-	font-weight: 900;
+	outline: none;
+	overflow: hidden;
+	letter-spacing: 4px;
+	border-radius: 5px;
 }
-input[type="button"] {
-	background: lightGray;
-	width: 15%;
-	font-size: 20px;
-	font-weight: 900;
-	border-radius: 7px;
-	margin-left: 13px;
-	margin-top: 10px;
+
+button:hover {
+	background-color: indianred;
 }
-input[type="button"]:active {
-	background-color: #3e8e41;
-	box-shadow: 0 5px #666;
-	transform: translateY(4px);
+
+.funcRow {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	margin-top: 5px;
 }
-input[type="button"]:hover {
-	background-color: #003300;
+
+.btnDiv {
+	flex: 1;
+}
+
+#enterBtnDiv {
+	flex: 2;
+	position: relative;
+}
+
+.funcBtn {
+	width: 30px;
+	height: 30px;
+	margin-top: 5px;
+}
+
+#enterBtn {
+	width: 100px;
+	height: 30px;
+	position: absolute;
+	bottom: 0;
+	left: 15px;
+}
+
+.grayBtn {
+	background-color: gray;
+}
+
+.blueBtn {
+	background-color: darkcyan;
 	color: white;
 }
 
-input[type =" text"] {
-	position: relative;
-	display: block;
-	width: 90%;
-	margin: 5px auto;
-	font-size: 20px;
+.blackBtn {
+	background-color: black;
+}
+
+.funcBtnLable {
+	text-align: center;
+	color: white;
+	font-size: 16px;
+}
+
+.arithmeticRow {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	margin-top: 25px;
+}
+
+.operatorBtnDiv {
+	flex: 1;
+}
+
+.numBtnDiv {
+	flex: 1.5;
+}
+
+.operatorBtn {
+	width: 35px;
+	height: 30px;
+}
+
+.numBtn {
+	width: 50px;
+	height: 30px;
+}
+
+#main {
+	display: flex;
+	margin: auto;
+	width: 700px;
+}
+
+.programDiv .calculator {
+	flex: 1;
+}
+
+.programDiv {
+	background-color: red;
+	margin-left: 10px;
+	border-radius: 10px;
+	background-color: #333333;
 	padding: 10px;
-	box-shadow: 4px 0px 12px black inset;
+	position: relative;
+	text-align: center;
+}
+
+textarea#styled {
+	width: 300px;
+	height: 470px;
+	text-shadow: 1px 1px 2px red, 0 0 25px red, 0 0 5px red;
+	display: block;
+	font-family: "Lucida Console", Monaco, monospace;
+	text-align: left;
+	border: 0;
+	background: black;
+	color: #e81010;
+	padding: 10px;
+	font-size: 20px;
+	outline: none;
+	overflow: hidden;
+	letter-spacing: 4px;
+	border-radius: 4px;
+	resize: none;
+}
+
+#programBtn {
+	width: 150px;
+	height: 40px;
+	position: absolute;
+	bottom: 10px;
+}
+
+.button {
+	color: white;
+	padding: 10px;
+	border-radius: 4px;
+	font-weight: normal;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out;
+}
+
+.glow-button:hover {
+	box-shadow: 0 5px 15px red;
 }

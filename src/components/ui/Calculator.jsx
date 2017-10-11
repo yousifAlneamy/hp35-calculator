@@ -13,62 +13,359 @@ class Calculator extends Component {
 	render() {
 		const [x, y, z, t] = this.props.stack;
 		return (
-			<form name="calculator">
+			<div className="calculator">
 				<div className="panel">
-					<div>t: {t}</div>
-					<div>z: {z}</div>
-					<div>y: {y}</div>
-					<div>x: {x}</div>
+					<div className="stack">t:{t}</div>
+					<div className="stack">z:{z}</div>
+					<div className="stack">y:{y}</div>
+					<div className="stack">x:{x}</div>
 				</div>
-				<div className="parent">
-					<input className="childInput" type="button" value="xʸ" onClick={() => this.onKeyIn(KC.POW)} />
-					<input className="childInput" type="button" value="LOG" onClick={() => this.onKeyIn(KC.LOG)} />
-					<input className="childInput" type="button" value="LN" onClick={() => this.onKeyIn(KC.LN)} />
-					<input className="childInput" type="button" value="eˣ" onClick={() => this.onKeyIn(KC.EXP)} />
-					<input className="childInput" type="button" value="CLR" onClick={() => this.onKeyIn(KC.CLR)} />
 
-					<input className="childInput" type="button" value="√x" onClick={() => this.onKeyIn(KC.SQRT)} />
-					<input className="childInput" type="button" value="ARC" onClick={() => this.onKeyIn(KC.ARC)} />
-					<input className="childInput" type="button" value="sin" onClick={() => this.onKeyIn(KC.SIN)} />
-					<input className="childInput" type="button" value="cos" onClick={() => this.onKeyIn(KC.COS)} />
-					<input className="childInput" type="button" value="tan" onClick={() => this.onKeyIn(KC.TAN)} />
+				<div className="funcContainer">
+					<div className="funcRow">
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								{"y​x"}
+							</label>
+							<br />
+							<button
+								className="funcBtn blackBtn"
+								onClick={() => this.onKeyIn(KC.POW)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								log
+							</label>
+							<br />
+							<button
+								className="funcBtn blackBtn"
+								onClick={() => this.onKeyIn(KC.LOG)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								ln
+							</label>
+							<br />
+							<button
+								className="funcBtn blackBtn"
+								onClick={() => this.onKeyIn(KC.LN)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								eˣ
+							</label>
+							<br />
+							<button
+								className="funcBtn blackBtn"
+								onClick={() => this.onKeyIn(KC.EXP)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								CLR
+							</label>
+							<br />
+							<button
+								className="funcBtn blueBtn"
+								onClick={() => this.onKeyIn(KC.CLR)}
+							/>
+						</div>
+					</div>
 
-					<input className="childInput" type="button" value="¹/x" onClick={() => this.onKeyIn(KC.RECIPROCAL)} />
-					<input className="childInput" type="button" value="x↔︎y" onClick={() => this.onKeyIn(KC.SWAP)} />
-					<input className="childInput" type="button" value="R↓" onClick={() => this.onKeyIn(KC.ROLL_DOWN)} />
-					<input className="childInput" type="button" value="STO" onClick={() => this.onKeyIn(KC.STO)} />
-					<input className="childInput" type="button" value="RCL" onClick={() => this.onKeyIn(KC.RCL)} />
+					<div className="funcRow">
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								√x
+							</label>
+							<br />
+							<button
+								className="funcBtn blackBtn"
+								onClick={() => this.onKeyIn(KC.SQRT)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								arc
+							</label>
+							<br />
+							<button
+								className="funcBtn grayBtn"
+								onClick={() => this.onKeyIn(KC.ARC)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								sin
+							</label>
+							<br />
+							<button
+								className="funcBtn grayBtn"
+								onClick={() => this.onKeyIn(KC.SIN)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								cos
+							</label>
+							<br />
+							<button
+								className="funcBtn grayBtn"
+								onClick={() => this.onKeyIn(KC.COS)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								tan
+							</label>
+							<br />
+							<button
+								className="funcBtn grayBtn"
+								onClick={() => this.onKeyIn(KC.TAN)}
+							/>
+						</div>
+					</div>
 
-					<input className="childInput" type="button" value="ENTER" onClick={() => this.onKeyIn(KC.ENTER)} />
-					<input className="childInput" type="button" value="CHS" onClick={() => this.onKeyIn(KC.CHS)} />
-					<input className="childInput" type="button" value="EEX" onClick={() => this.onKeyIn(KC.EEX)} />
-					<input className="childInput" type="button" value="CLX" onClick={() => this.onKeyIn(KC.CLX)} />
-					<br />
+					<div className="funcRow">
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								¹/x
+							</label>
+							<br />
+							<button
+								className="funcBtn blackBtn"
+								onClick={() => this.onKeyIn(KC.RECIPROCAL)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								x↔︎y
+							</label>
+							<br />
+							<button
+								className="funcBtn blackBtn"
+								onClick={() => this.onKeyIn(KC.SWAP)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								R↓
+							</label>
+							<br />
+							<button
+								className="funcBtn blackBtn"
+								onClick={() => this.onKeyIn(KC.ROLL_DOWN)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label
+								htmlFor="button"
+								className="funcBtnLable"
+								onClick={() => this.onKeyIn(KC.STO)}
+							>
+								STO
+							</label>
+							<br />
+							<button className="funcBtn blackBtn" />
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								RCL
+							</label>
+							<br />
+							<button
+								className="funcBtn blackBtn"
+								onClick={() => this.onKeyIn(KC.RCL)}
+							/>
+						</div>
+					</div>
 
-					<input className="childInput" type="button" value="-" onClick={() => this.onKeyIn(KC.SUB)} />
-					<input className="childInput" type="button" value="7" onClick={() => this.onKeyIn(KC.D7)} />
-					<input className="childInput" type="button" value="8" onClick={() => this.onKeyIn(KC.D8)} />
-					<input className="childInput" type="button" value="9" onClick={() => this.onKeyIn(KC.D9)} />
-					<br />
+					<div className="funcRow">
+						<div id="enterBtnDiv" className="btnDiv">
+							<button
+								id="enterBtn"
+								className="funcBtn blueBtn"
+								onClick={() => this.onKeyIn(KC.ENTER)}
+							>
+								Enter↑
+							</button>
+							<br />
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								CH S
+							</label>
+							<br />
+							<button
+								className="funcBtn blueBtn"
+								onClick={() => this.onKeyIn(KC.CHS)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								E EX
+							</label>
+							<br />
+							<button
+								className="funcBtn blueBtn"
+								onClick={() => this.onKeyIn(KC.EEX)}
+							/>
+						</div>
+						<div className="btnDiv">
+							<label htmlFor="button" className="funcBtnLable">
+								CL 𝓧
+							</label>
+							<br />
+							<button
+								className="funcBtn blueBtn"
+								onClick={() => this.onKeyIn(KC.CLX)}
+							/>
+						</div>
+					</div>
 
-					<input className="childInput" type="button" value="+" onClick={() => this.onKeyIn(KC.ADD)} />
-					<input className="childInput" type="button" value="4" onClick={() => this.onKeyIn(KC.D4)} />
-					<input className="childInput" type="button" value="5" onClick={() => this.onKeyIn(KC.D5)} />
-					<input className="childInput" type="button" value="6" onClick={() => this.onKeyIn(KC.D6)} />
-					<br />
+					<div className="arithmeticRow">
+						<div className="operatorBtnDiv">
+							<button
+								className="operatorBtn blueBtn"
+								onClick={() => this.onKeyIn(KC.SUB)}
+							>
+								-
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.D7)}
+							>
+								7
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.D8)}
+							>
+								8
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.D9)}
+							>
+								9
+							</button>
+						</div>
+					</div>
 
-					<input className="childInput" type="button" value="*" onClick={() => this.onKeyIn(KC.MUL)} />
-					<input className="childInput" type="button" value="1" onClick={() => this.onKeyIn(KC.D1)} />
-					<input className="childInput" type="button" value="2" onClick={() => this.onKeyIn(KC.D2)} />
-					<input className="childInput" type="button" value="3" onClick={() => this.onKeyIn(KC.D3)} />
-					<br />
+					<div className="arithmeticRow">
+						<div className="operatorBtnDiv">
+							<button
+								className="operatorBtn blueBtn"
+								onClick={() => this.onKeyIn(KC.ADD)}
+							>
+								+
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.D4)}
+							>
+								4
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.D5)}
+							>
+								5
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.D6)}
+							>
+								6
+							</button>
+						</div>
+					</div>
 
-					<input className="childInput" type="button" value="÷" onClick={() => this.onKeyIn(KC.DIV)} />
-					<input className="childInput" type="button" value="0" onClick={() => this.onKeyIn(KC.D0)} />
-					<input className="childInput" type="button" value="." onClick={() => this.onKeyIn(KC.DOT)} />
-					<input className="childInput" type="button" value="π" onClick={() => this.onKeyIn(KC.PI)} />
+					<div className="arithmeticRow">
+						<div className="operatorBtnDiv">
+							<button
+								className="operatorBtn blueBtn"
+								onClick={() => this.onKeyIn(KC.MUL)}
+							>
+								X
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.D1)}
+							>
+								1
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.D2)}
+							>
+								2
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.D3)}
+							>
+								3
+							</button>
+						</div>
+					</div>
+
+					<div className="arithmeticRow">
+						<div className="operatorBtnDiv">
+							<button
+								className="operatorBtn blueBtn"
+								onClick={() => this.onKeyIn(KC.DIV)}
+							>
+								÷
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.D0)}
+							>
+								0
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.DOT)}
+							>
+								•
+							</button>
+						</div>
+						<div className="numBtnDiv">
+							<button
+								className="numBtn whiteBtn"
+								onClick={() => this.onKeyIn(KC.PI)}
+							>
+								π
+							</button>
+						</div>
+					</div>
 				</div>
-			</form>
+			</div>
 		);
 	}
 }

@@ -7,9 +7,14 @@ class Program extends Component {
 		this.runProgram = this.runProgram.bind(this);
 		this.state = { input: "" };
 		this.handleChange = this.handleChange.bind(this);
+		this.clearText = this.handleChange.bind(this);
 	}
 	handleChange(event) {
 		this.setState({ input: event.target.value });
+	}
+	clearText(event) {
+		event.target.value = "";
+		alert("ddddddd");
 	}
 	runProgram() {
 		const inputLines = this.state.input
@@ -53,9 +58,18 @@ class Program extends Component {
 	}
 	render() {
 		return (
-			<div className="program">
-				<textarea rows="4" cols="50" onChange={this.handleChange} placeholder="Write program here" />
-				<button onClick={this.runProgram} type="button">
+			<div className="programDiv">
+				<textarea
+					name="styled-textarea"
+					id="styled"
+					onChange={this.handleChange}
+					placeholder="Write program here..."
+				/>
+				<button
+					id="programBtn"
+					className="button glow-button blueBtn"
+					onClick={this.runProgram}
+				>
 					Run Program
 				</button>
 			</div>
