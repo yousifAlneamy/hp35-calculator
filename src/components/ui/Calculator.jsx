@@ -15,17 +15,29 @@ class Calculator extends Component {
 		return (
 			<div className="calculator">
 				<div className="panel">
-					<div className="stack">t:{t}</div>
-					<div className="stack">z:{z}</div>
-					<div className="stack">y:{y}</div>
-					<div className="stack">x:{x}</div>
+					<div className="stack">
+						t:{t}
+						<div className="glowingDiv" />
+					</div>
+					<div className="stack">
+						z:{z}
+						<div className="glowingDiv" />
+					</div>
+					<div className="stack">
+						y:{y}
+						<div className="glowingDiv" />
+					</div>
+					<div className="stack">
+						x:{x}
+						<div className="glowingDiv" />
+					</div>
 				</div>
 
 				<div className="funcContainer">
 					<div className="funcRow">
 						<div className="btnDiv">
 							<label htmlFor="button" className="funcBtnLable">
-								{"y​x"}
+								{"y​ˣ"}
 							</label>
 							<br />
 							<button

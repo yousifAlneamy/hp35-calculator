@@ -5,10 +5,12 @@ class Program extends Component {
 	constructor(props) {
 		super(props);
 		this.runProgram = this.runProgram.bind(this);
-		this.state = { input: "" };
+		this.state = {
+			errorMessage: "",
+			input: ""
+		};
 		this.handleChange = this.handleChange.bind(this);
 		this.clearText = this.handleChange.bind(this);
-		this.state = { errorMessage: "" };
 	}
 	handleChange(event) {
 		this.setState({ input: event.target.value });

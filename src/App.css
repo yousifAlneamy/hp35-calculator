@@ -11,6 +11,7 @@ body {
 .stack {
 	margin-top: 5px;
 	margin-bottom: 5px;
+	position: relative;
 }
 .panel {
 	text-shadow: 1px 1px 2px red, 0 0 25px red, 0 0 5px red;
@@ -26,6 +27,15 @@ body {
 	overflow: hidden;
 	letter-spacing: 4px;
 	border-radius: 5px;
+}
+.glowingDiv {
+	position: absolute;
+	width: 100%;
+	height: 5%;
+	background-color: red;
+	opacity: 0.1;
+	box-shadow: 5px 5px 5px red, 5px 5px 5px red, 5px 5px 5px red;
+	bottom: 6px;
 }
 
 button:hover {
@@ -112,7 +122,8 @@ button:hover {
 	width: 700px;
 }
 
-.programDiv .calculator {
+.programDiv,
+.calculator {
 	flex: 1;
 }
 
@@ -171,4 +182,11 @@ textarea#styled {
 
 .glow-button:hover {
 	box-shadow: 0 5px 15px red;
+}
+button {
+	cursor: pointer;
+}
+label,
+button {
+	font-family: "Times New Roman", Times, serif;
 }
