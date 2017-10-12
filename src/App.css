@@ -27,6 +27,7 @@ body {
 	overflow: hidden;
 	letter-spacing: 4px;
 	border-radius: 5px;
+	animation: 1.5s infinite changeTextShadow;
 }
 .glowingDiv {
 	position: absolute;
@@ -36,6 +37,7 @@ body {
 	opacity: 0.1;
 	box-shadow: 5px 5px 5px red, 5px 5px 5px red, 5px 5px 5px red;
 	bottom: 6px;
+	animation: 3s infinite changeBoxShadow;
 }
 
 .funcRow {
@@ -150,6 +152,35 @@ textarea#styled {
 	letter-spacing: 4px;
 	border-radius: 4px;
 	resize: none;
+	animation: 2s infinite changeTextShadow;
+}
+@keyframes changeBoxShadow {
+	0% {
+		background-color: red;
+		box-shadow: 5px 5px 5px red, 5px 5px 5px red, 5px 5px 5px red;
+	}
+	50% {
+		background-color: darkred;
+		box-shadow: 5px 5px 5px darkred, 5px 5px 5px darkred, 5px 5px 5px darkred;
+	}
+	100% {
+		background-color: red;
+		box-shadow: 5px 5px 5px red, 5px 5px 5px red, 5px 5px 5px red;
+	}
+}
+@keyframes changeTextShadow {
+	0% {
+		color: #e81010;
+		text-shadow: 1px 1px 20px red, 0 0 20px red, 0 0 20px red;
+	}
+	50% {
+		color: #e80000;
+		text-shadow: 1px 1px 20px darkred, 0 0 20px darkred, 0 0 20px darkred;
+	}
+	100% {
+		color: #e81010;
+		text-shadow: 1px 1px 20px red, 0 0 20px red, 0 0 20px red;
+	}
 }
 
 #programBtn {
