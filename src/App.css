@@ -1,16 +1,17 @@
 body {
-	padding-top: 20px;
+	padding-top: 10px;
 }
 .calculator {
 	box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
 	border-radius: 10px;
-	width: 320px;
+	width: 300px;
+	height: 480px;
 	background-color: #333333;
 	padding: 10px;
 }
 .stack {
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 3px;
+	margin-bottom: 3px;
 	position: relative;
 }
 .panel {
@@ -22,7 +23,7 @@ body {
 	background: black;
 	color: #e81010;
 	padding: 10px;
-	font-size: 20px;
+	font-size: 18px;
 	outline: none;
 	overflow: hidden;
 	letter-spacing: 4px;
@@ -44,7 +45,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
-	margin-top: 5px;
+	margin-top: 3px;
 }
 
 .btnDiv {
@@ -57,14 +58,14 @@ body {
 }
 
 .funcBtn {
-	width: 30px;
-	height: 30px;
-	margin-top: 5px;
+	width: 25px;
+	height: 25px;
+	margin-top: 3px;
 }
 
 #enterBtn {
-	width: 100px;
-	height: 30px;
+	width: 95px;
+	height: 25px;
 	position: absolute;
 	bottom: 0;
 	left: 15px;
@@ -86,14 +87,13 @@ body {
 .funcBtnLable {
 	text-align: center;
 	color: white;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .arithmeticRow {
 	display: flex;
-	flex-wrap: wrap;
 	text-align: center;
-	margin-top: 25px;
+	margin-top: 15px;
 }
 
 .operatorBtnDiv {
@@ -105,13 +105,13 @@ body {
 }
 
 .operatorBtn {
-	width: 35px;
-	height: 30px;
+	width: 30px;
+	height: 25px;
 }
 
 .numBtn {
-	width: 50px;
-	height: 30px;
+	width: 47px;
+	height: 25px;
 }
 
 #main {
@@ -126,18 +126,22 @@ body {
 }
 
 .programDiv {
-	background-color: red;
-	margin-left: 10px;
+	box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
 	border-radius: 10px;
+	width: 300px;
+	height: 480px;
 	background-color: #333333;
 	padding: 10px;
+	margin-left: 10px;
+	border-radius: 10px;
 	position: relative;
 	text-align: center;
 }
 
 textarea#styled {
+	margin: auto;
 	width: 300px;
-	height: 470px;
+	height: 410px;
 	text-shadow: 1px 1px 2px red, 0 0 25px red, 0 0 5px red;
 	display: block;
 	font-family: "Lucida Console", Monaco, monospace;
@@ -146,10 +150,10 @@ textarea#styled {
 	background: black;
 	color: #e81010;
 	padding: 10px;
-	font-size: 20px;
+	font-size: 18px;
 	outline: none;
 	overflow: hidden;
-	letter-spacing: 4px;
+	letter-spacing: 3px;
 	border-radius: 4px;
 	resize: none;
 	animation: 2s infinite changeTextShadow;
@@ -193,9 +197,9 @@ textarea#styled {
 	text-shadow: 1px 1px 2px red, 0 0 25px red, 0 0 5px red;
 	font-family: "Lucida Console", Monaco, monospace;
 	position: absolute;
-	bottom: 35px;
-	left: 10px;
-	color: lightblue;
+	bottom: 25px;
+	left: 15px;
+	color: sandybrown;
 }
 
 .button {
