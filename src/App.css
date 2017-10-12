@@ -38,10 +38,6 @@ body {
 	bottom: 6px;
 }
 
-button:hover {
-	background-color: indianred;
-}
-
 .funcRow {
 	display: flex;
 	flex-wrap: wrap;
@@ -179,10 +175,11 @@ textarea#styled {
 	text-transform: uppercase;
 	transition: all 0.2s ease-in-out;
 }
-
-.glow-button:hover {
-	box-shadow: 0 5px 15px red;
+button:hover {
+	box-shadow: 0 0 20px darkcyan;
+	background-color: #bd776f;
 }
+
 button {
 	cursor: pointer;
 }
