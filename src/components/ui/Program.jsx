@@ -8,14 +8,12 @@ class Program extends Component {
 		this.state = { input: "" };
 		this.handleChange = this.handleChange.bind(this);
 		this.clearText = this.handleChange.bind(this);
+		this.state = { errorMessage: "" };
 	}
 	handleChange(event) {
 		this.setState({ input: event.target.value });
 	}
-	clearText(event) {
-		event.target.value = "";
-		alert("ddddddd");
-	}
+
 	runProgram() {
 		const inputLines = this.state.input
 			.trim()
@@ -32,8 +30,13 @@ class Program extends Component {
 					this.exeFunction(line);
 				}
 			}
+			this.setState({
+				errorMessage: ""
+			});
 		} else {
-			alert("Syntax Error!");
+			this.setState({
+				errorMessage: "Syntax Error!"
+			});
 		}
 	}
 	isCompilable(inputLines) {
@@ -65,6 +68,12 @@ class Program extends Component {
 					onChange={this.handleChange}
 					placeholder="Write program here..."
 				/>
+				{this.state.errorMessage ? (
+					<div className="errorMessage">{this.state.errorMessage}</div>
+				) : (
+					""
+				)}
+
 				<button
 					id="programBtn"
 					className="button glow-button blueBtn"
