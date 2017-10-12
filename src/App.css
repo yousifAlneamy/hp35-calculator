@@ -175,6 +175,7 @@ textarea#styled {
 	text-transform: uppercase;
 	transition: all 0.2s ease-in-out;
 }
+
 button:hover {
 	box-shadow: 0 0 20px darkcyan;
 	background-color: #bd776f;
@@ -183,6 +184,7 @@ button:hover {
 button {
 	cursor: pointer;
 }
+
 label,
 button {
 	font-family: "Times New Roman", Times, serif;
