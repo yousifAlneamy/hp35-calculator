@@ -38,11 +38,11 @@ body {
 .glowingDiv {
 	position: absolute;
 	width: 100%;
-	height: 5%;
+	height: 8%;
 	background-color: red;
 	opacity: 0.1;
 	box-shadow: 5px 5px 5px red, 5px 5px 5px red, 5px 5px 5px red;
-	bottom: 6px;
+	bottom: 7px;
 	animation: 3s infinite changeBoxShadow;
 }
 

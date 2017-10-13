@@ -111,7 +111,18 @@ const toggleARC = () => (dispatch, getState) => {
 
 // const enableARC = () => (dispatch, getState) => dispatch({ type: C.ENABLE_ARC });
 
-const addEEX = () => ({ type: C.ADD_EEX });
+const addEEX = () => (dispatch, getState) => {
+	const { stackShift, refreshEntry } = getState();
+
+	if (stackShift) {
+		dispatch({ type: C.SHIFT_UP });
+		dispatch({ type: C.CLX });
+	} else if (refreshEntry) {
+		dispatch({ type: C.CLX });
+	}
+
+	dispatch({ type: C.ADD_EEX });
+};
 
 export const setX = number => ({ type: C.SET_X, payload: number });
 
